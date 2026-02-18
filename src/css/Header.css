@@ -1,0 +1,297 @@
+/* Reset with enhanced defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header container with light, airy background */
+  .searchHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    background: linear-gradient(135deg, 
+    #9a9aff 0%,
+    #6c92fb 25%,
+    #fdfeff 50%,
+    #945de7 75%,
+    #9c0efb 100%
+    );
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+    box-shadow: 
+      0 2px 15px rgba(0, 0, 0, 0.04),
+      0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .searchHeader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.2), 
+      transparent
+    );
+    animation: shimmer 3s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  /* Logo with enhanced styling */
+  .projectLogo {
+    height: 52px;
+    width: auto;
+    border-radius: 12px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .projectLogo:hover {
+    transform: translateY(-2px) scale(1.05);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+  }
+  
+  /* Beautiful title with stunning gradient and effects */
+  .projectTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(145deg, 
+      #667eea 0%, 
+      #764ba2 25%, 
+      #f093fb 50%,
+      #f5576c 75%,
+      #4facfe 100%
+    );
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "SF Pro Display", Oxygen, Ubuntu, Cantarell, sans-serif;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
+    animation: gradientShift 6s ease-in-out infinite;
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .projectTitle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, 
+      #2a3460 0%, 
+      #ffffff 25%, 
+      #f093fb 50%,
+      #f5576c 75%,
+      #3995e6 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 6s ease-in-out infinite;
+    filter: blur(20px);
+    opacity: 0.3;
+    z-index: -1;
+  }
+  
+  .projectTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+    #60379a 0%,
+    #191c24 25%,
+    #496a92 50%,
+    #8662bc 75%,
+    #853838 100%
+    );
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+  }
+  
+  .searchHeader:hover .projectTitle::after {
+    width: 120px;
+  }
+  
+  .projectTitle:hover {
+    transform: translateY(-2px);
+    letter-spacing: 1px;
+  }
+  
+  /* Modern dark mode button with gradient and effects */
+  .darkModeButton {
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    box-shadow: 
+      0 4px 12px rgba(30, 41, 59, 0.3),
+      0 1px 0 rgba(255, 255, 255, 0.1) inset;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    font-family: inherit;
+  }
+  
+  .darkModeButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.1), 
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+  
+  .darkModeButton:hover::before {
+    left: 100%;
+  }
+  
+  .darkModeButton:hover {
+    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 20px rgba(30, 41, 59, 0.4),
+      0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  }
+  
+  .darkModeButton:active {
+    transform: translateY(0);
+    box-shadow: 
+      0 2px 8px rgba(30, 41, 59, 0.3),
+      0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  }
+  
+  /* Enhanced dark theme */
+  body.dark .searchHeader {
+    background: linear-gradient(135deg, 
+      rgba(15, 23, 42, 0.95) 0%, 
+      rgba(30, 41, 59, 0.98) 50%,
+      rgba(51, 65, 85, 0.95) 100%
+    );
+    border-bottom: 1px solid rgba(71, 85, 105, 0.8);
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.3),
+      0 1px 0 rgba(255, 255, 255, 0.05) inset;
+  }
+  
+  body.dark .searchHeader::before {
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.05), 
+      transparent
+    );
+  }
+  
+  body.dark .projectTitle {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  body.dark .projectTitle::after {
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+  }
+  
+  body.dark .projectLogo {
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) brightness(1.1);
+  }
+  
+  body.dark .darkModeButton {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    color: #1e293b;
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.2),
+      0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  }
+  
+  body.dark .darkModeButton::before {
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(0, 0, 0, 0.05), 
+      transparent
+    );
+  }
+  
+  body.dark .darkModeButton:hover {
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    box-shadow: 
+      0 8px 20px rgba(0, 0, 0, 0.3),
+      0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .searchHeader {
+      padding: 16px 20px;
+    }
+    
+    .projectLogo {
+      height: 40px;
+    }
+    
+    .projectTitle {
+      font-size: 1.5rem;
+    }
+    
+    .darkModeButton {
+      padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .searchHeader {
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px;
+    }
+    
+    .projectTitle {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+  }
